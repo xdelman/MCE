@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout xmlns:andriod="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    andriod:id="@+id/drawer_layout"
+    andriod:layout_width="match_parent"
+    andriod:layout_height="match_parent">
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.xolaniman_xdelman.themc_app.Main3Activity_menu_icons"
+        android:background="#ffffff">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_rewards"
+            android:layout_below="@+id/button_about"
+            android:layout_centerHorizontal="true"
+            android:onClick="SelectDialogListenerRewardsButton"
+            android:src="@drawable/mce_rewards_icon"
+            android:background="#f9f9f9"
+            android:layout_x="128dp"
+            android:layout_y="137dp"
+            android:layout_row="10"
+            android:layout_column="1"
+            android:layout_gravity="center" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_transactions"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="SelectDialogListenerTransactionsButton"
+            android:src="@drawable/mce_transaction_icon"
+            android:background="#f9f9f9"
+            android:layout_x="12dp"
+            android:layout_y="185dp"
+            android:layout_row="9"
+            android:layout_column="3"
+            android:layout_gravity="left|center_vertical" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_account"
+            android:layout_alignTop="@+id/button_transactions"
+            android:layout_alignParentRight="true"
+            android:onClick="SelectDialogListenerAccountButton"
+            android:src="@drawable/mce_sett_button"
+            android:background="#f9f9f9"
+            android:layout_x="256dp"
+            android:layout_y="170dp"
+            android:layout_row="10"
+            android:layout_column="0"
+            android:layout_gravity="right|center_vertical" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="88dp"
+            android:id="@+id/button_wallet"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="SelectDialogListenerWalletButton"
+            android:src="@drawable/wallet_button"
+            android:background="#f9f9f9"
+            android:layout_x="15dp"
+            android:layout_y="47dp"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_gravity="center_horizontal|top" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:id="@+id/imageView7"
+            android:layout_gravity="center_horizontal|top"
+            android:background="@color/White"
+            android:src="@drawable/mce_balance_banner" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/imageView8"
+            android:layout_gravity="center_horizontal|bottom"
+            android:src="@drawable/mce_ad_banner1" />
+    </FrameLayout>
+
+    <android.support.design.widget.NavigationView
+        andriod:id="@+id/navigation_icons"
+        andriod:layout_width="wrap_content"
+        andriod:layout_height="match_parent"
+        andriod:layout_gravity="start"
+        app:menu="@menu/activity_main3_menu_icons_navigation_menu"
+        app:headerLayout="@layout/navigation_header"/>
+
+</android.support.v4.widget.DrawerLayout>

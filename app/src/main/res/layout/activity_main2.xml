@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout xmlns:andriod="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    andriod:id="@+id/drawer_layout"
+    andriod:layout_width="match_parent"
+    andriod:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.example.xolaniman_xdelman.themc_app.Main2Activity"
+        android:animationCache="false"
+        android:background="@color/White">
+
+        <!--android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="100dp" /-->
+        <!--android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold|italic" /-->
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageButtonM"
+            android:src="@drawable/mce_mno_mtn"
+            android:onClick="MTNClickListner"
+            android:adjustViewBounds="false"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/imageButtonV"
+            android:layout_alignStart="@+id/imageButtonV"
+            android:background="@color/White" />
+            <!--android:layout_above="@+id/imageButtonV"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" /-->
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageButtonV"
+            android:src="@drawable/mce_mno_voda"
+            android:onClick="VodaClickListner"
+            android:layout_alignTop="@+id/imageButtonC"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/White"
+            android:nestedScrollingEnabled="false" />
+            <!--android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" /-->
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageButtonC"
+            android:src="@drawable/mce_mno_cell_c"
+            android:onClick="CellcClickListner"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/White" />
+            <!--android:layout_below="@+id/imageButtonE"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" /-->
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageButtonE"
+            android:src="@drawable/mce_mno_eita"
+            android:onClick="EitaClickListener"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/White" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:id="@+id/imageView5"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/mce_select_mno" />
+        <!--android:layout_below="@+id/imageButtonV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" /-->
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        andriod:id="@+id/navigation_main2"
+        andriod:layout_width="wrap_content"
+        andriod:layout_height="match_parent"
+        andriod:layout_gravity="start"
+        app:menu="@menu/activity_main3_menu_icons_navigation_menu"
+        app:headerLayout="@layout/navigation_header"/>
+
+</android.support.v4.widget.DrawerLayout>
