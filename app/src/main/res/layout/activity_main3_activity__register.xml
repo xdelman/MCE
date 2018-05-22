@@ -1,59 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.xolaniman_xdelman.themc_app.Main3Activity_Register">
 
-<!--android.support.v4.widget.DrawerLayout xmlns:andriod="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    andriod:id="@+id/drawer_layout"
-    andriod:layout_width="match_parent"
-    andriod:layout_height="match_parent"-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="This is the registration page for new users. If you own a shop and you would like to register it, please do so by clicking te appropriate option below:"
+        android:id="@+id/textView7"
+        android:textSize="20dp"
+        android:textColor="@color/Black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="normal|bold|italic" />
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context="com.example.xolaniman_xdelman.themc_app.Main3Activity_Register">
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/imbutton_User_Reg"
+        android:onClick="onClickListnerRegUser"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/register_button_new_user"
+        android:background="@color/White" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:text="This is the registration page for new users. If you own a shop and you would like to register it, please do so by clicking te appropriate option below:"
-            android:id="@+id/textView7"
-            android:textSize="20dp"
-            android:textColor="@color/Black"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="normal|bold|italic" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:id="@+id/imbutton_User_Reg"
-            android:onClick="onClickListnerRegUser"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/register_button_new_user"
-            android:background="@color/White" />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:id="@+id/imbutton_Spaza_Reg"
-            android:onClick="onClickListnerRegSpaza"
-            android:layout_alignTop="@+id/imbutton_User_Reg"
-            android:layout_alignRight="@+id/textView7"
-            android:src="@drawable/register_button_mce_agent"
-            android:background="@color/White" />
-    </RelativeLayout>
-
-    <!--android.support.design.widget.NavigationView
-        andriod:id="@+id/navigation_register"
-        andriod:layout_width="wrap_content"
-        andriod:layout_height="match_parent"
-        andriod:layout_gravity="start"
-        app:menu="@menu/activity_main3_menu_icons_navigation_menu"/>
-
-</android.support.v4.widget.DrawerLayout-->
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/imbutton_Spaza_Reg"
+        android:onClick="onClickListnerRegSpaza"
+        android:layout_alignTop="@+id/imbutton_User_Reg"
+        android:layout_alignRight="@+id/textView7"
+        android:src="@drawable/register_button_mce_agent"
+        android:background="@color/White" />
+</RelativeLayout>

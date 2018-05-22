@@ -1,3 +1,4 @@
+
 package com.example.xolaniman_xdelman.themc_app;
 
 import android.support.design.widget.Snackbar;
@@ -9,38 +10,36 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
-import android.widget.Button;
 
 import com.helpers.InputValidation;
 import com.model.MCE_User;
-import com.sql.DatabaseHelper;
+import com.sql.DatabaseHelperLogin;
 
 public class Main3Activity_User_Reg extends AppCompatActivity implements View.OnClickListener {
-
     private final AppCompatActivity activity = Main3Activity_User_Reg.this;
 
     private NestedScrollView nestedScrollView;
 
-    private TextInputLayout textInputLayoutFirstName;
-    private TextInputLayout textInputLayoutLastName;
-    private TextInputLayout textInputLayoutPhoneNumber;
-    private TextInputLayout textInputLayoutEmail;
-    private TextInputLayout textInputLayoutPassword;
-    private TextInputLayout textInputLayoutConfirmPassword;
+    private TextInputLayout     textInputLayoutFirstName;
+    private TextInputLayout     textInputLayoutLastName;
+    private TextInputLayout     textInputLayoutPhoneNumber;
+    private TextInputLayout     textInputLayoutEmail;
+    private TextInputLayout     textInputLayoutPassword;
+    private TextInputLayout     textInputLayoutConfirmPassword;
 
-    private TextInputEditText textInputEditTextFirstName;
-    private TextInputEditText textInputEditTextLastName;
-    private TextInputEditText textInputEditTextPhoneNumber;
-    private TextInputEditText textInputEditTextEmail;
-    private TextInputEditText textInputEditTextPassword;
-    private TextInputEditText textInputEditTextConfirmPassword;
+    private TextInputEditText   textInputEditTextFirstName;
+    private TextInputEditText   textInputEditTextLastName;
+    private TextInputEditText   textInputEditTextPhoneNumber;
+    private TextInputEditText   textInputEditTextEmail;
+    private TextInputEditText   textInputEditTextPassword;
+    private TextInputEditText   textInputEditTextConfirmPassword;
 
-    private AppCompatButton appCompatButtonRegister;
-    private AppCompatTextView appCompatTextViewLoginLink;
+    private AppCompatButton     appCompatButtonRegister;
+    private AppCompatTextView   appCompatTextViewLoginLink;
 
-    private InputValidation inputValidation;
-    private DatabaseHelper databaseHelper;
-    private MCE_User user;
+    private InputValidation     inputValidation;
+    private DatabaseHelperLogin databaseHelper;
+    private MCE_User            user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,26 +57,25 @@ public class Main3Activity_User_Reg extends AppCompatActivity implements View.On
      * This method is to initialize views
      */
     private void initViews() {
-        nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
+        nestedScrollView                  = (NestedScrollView) findViewById(R.id.nestedScrollView);
 
-        textInputLayoutFirstName = (TextInputLayout) findViewById(R.id.textInputLayoutFirstName);
-        textInputLayoutLastName = (TextInputLayout) findViewById(R.id.textInputLayoutLastName);
-        textInputLayoutLastName = (TextInputLayout) findViewById(R.id.textInputLayoutPhoneNumber);
-        textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
-        textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
-        textInputLayoutConfirmPassword = (TextInputLayout) findViewById(R.id.textInputLayoutConfirmPassword);
+        textInputLayoutFirstName          = (TextInputLayout) findViewById(R.id.textInputLayoutFirstName);
+        textInputLayoutLastName           = (TextInputLayout) findViewById(R.id.textInputLayoutLastName);
+        textInputLayoutPhoneNumber        = (TextInputLayout) findViewById(R.id.textInputLayoutPhoneNumber);
+        textInputLayoutEmail              = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
+        textInputLayoutPassword           = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
+        textInputLayoutConfirmPassword    = (TextInputLayout) findViewById(R.id.textInputLayoutConfirmPassword);
 
-        textInputEditTextFirstName = (TextInputEditText) findViewById(R.id.textInputEditTextFirstName);
-        textInputEditTextLastName = (TextInputEditText) findViewById(R.id.textInputEditTextLastName);
-        textInputEditTextPhoneNumber = (TextInputEditText) findViewById(R.id.textInputEditTextPhoneNumber);
-        textInputEditTextEmail = (TextInputEditText) findViewById(R.id.textInputEditTextEmail);
-        textInputEditTextPassword = (TextInputEditText) findViewById(R.id.textInputEditTextPassword);
-        textInputEditTextConfirmPassword = (TextInputEditText) findViewById(R.id.textInputEditTextConfirmPassword);
+        textInputEditTextFirstName        = (TextInputEditText) findViewById(R.id.textInputEditTextFirstName);
+        textInputEditTextLastName         = (TextInputEditText) findViewById(R.id.textInputEditTextLastName);
+        textInputEditTextPhoneNumber      = (TextInputEditText) findViewById(R.id.textInputEditTextPhoneNumber);
+        textInputEditTextEmail            = (TextInputEditText) findViewById(R.id.textInputEditTextEmail);
+        textInputEditTextPassword         = (TextInputEditText) findViewById(R.id.textInputEditTextPassword);
+        textInputEditTextConfirmPassword  = (TextInputEditText) findViewById(R.id.textInputEditTextConfirmPassword);
 
-        appCompatButtonRegister = (AppCompatButton) findViewById(R.id.appCompatButtonRegister);
+        appCompatButtonRegister           = (AppCompatButton) findViewById(R.id.appCompatButtonRegister);
 
-        appCompatTextViewLoginLink = (AppCompatTextView) findViewById(R.id.appCompatTextViewLoginLink);
-
+        appCompatTextViewLoginLink        = (AppCompatTextView) findViewById(R.id.appCompatTextViewLoginLink);
     }
 
     /**
@@ -86,7 +84,6 @@ public class Main3Activity_User_Reg extends AppCompatActivity implements View.On
     private void initListeners() {
         appCompatButtonRegister.setOnClickListener(this);
         appCompatTextViewLoginLink.setOnClickListener(this);
-
     }
 
     /**
@@ -94,7 +91,7 @@ public class Main3Activity_User_Reg extends AppCompatActivity implements View.On
      */
     private void initObjects() {
         inputValidation = new InputValidation(activity);
-        databaseHelper = new DatabaseHelper(activity);
+        databaseHelper = new DatabaseHelperLogin(activity);
         user = new MCE_User();
     }
 
@@ -121,13 +118,13 @@ public class Main3Activity_User_Reg extends AppCompatActivity implements View.On
      * This method is to validate the input text fields and post data to SQLite
      */
     private void postDataToSQLite() {
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextFirstName, textInputLayoutFirstName, getString(R.string.error_message_name))) {
+        if (!inputValidation.isInputEditTextFilled(textInputEditTextFirstName, textInputLayoutFirstName, getString(R.string.error_message_first_name))) {
             return;
         }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextLastName, textInputLayoutLastName, getString(R.string.error_message_name))) {
+        if (!inputValidation.isInputEditTextFilled(textInputEditTextLastName, textInputLayoutLastName, getString(R.string.error_message_last_name))) {
             return;
         }
-        if (!inputValidation.isInputEditTextFilled(textInputEditTextPhoneNumber, textInputLayoutPhoneNumber, getString(R.string.error_message_name))) {
+        if (!inputValidation.isInputEditTextFilled(textInputEditTextPhoneNumber, textInputLayoutPhoneNumber, getString(R.string.error_message_phone_number))) {
             return;
         }
         if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
@@ -146,7 +143,9 @@ public class Main3Activity_User_Reg extends AppCompatActivity implements View.On
 
         if (!databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim())) {
 
-            user.setName(textInputEditTextFirstName.getText().toString().trim());
+            user.setFirstName(textInputEditTextFirstName.getText().toString().trim());
+            user.setLastName(textInputEditTextLastName.getText().toString().trim());
+            user.setPhoneNumber(textInputEditTextPhoneNumber.getText().toString().trim());
             user.setEmail(textInputEditTextEmail.getText().toString().trim());
             user.setPassword(textInputEditTextPassword.getText().toString().trim());
 

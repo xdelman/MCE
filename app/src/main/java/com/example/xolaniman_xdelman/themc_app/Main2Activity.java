@@ -1,6 +1,7 @@
 package com.example.xolaniman_xdelman.themc_app;
 
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,10 +17,7 @@ import android.widget.ImageButton;
  * @Author Delman Xolani
  * @Date 2016
  */
-public class Main2Activity extends AppCompatActivity {
-
-    //Button buttonM, buttonV, buttonC, buttonT;
-    public ImageButton buttonM, buttonV, buttonC, buttonT;
+public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
@@ -28,12 +26,8 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        VodaClickListner();
-        MTNClickListner();
-        EitaClickListener();
-        CellcClickListner();
 
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawerLayout = (DrawerLayout)findViewById(R.id.mno_drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.Open, R.string.Close);
 
          //Creating the side menu button
@@ -41,6 +35,41 @@ public class Main2Activity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.mno_navigation_view);
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener(){
+                    @Override
+                    public boolean onNavigationItemSelected( MenuItem menuItem ){
+                        switch ( menuItem.getItemId() ){
+                            case R.id.nav_about_us:
+                                Intent abtIntent = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                                startActivity(abtIntent);
+                                closeOptionsMenu();
+                                break;
+                            case R.id.nav_help:
+                                Intent hlpIntent = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                                startActivity(hlpIntent);
+                                closeOptionsMenu();
+                                break;
+                            case R.id.nav_logout:
+                                Intent logIntent = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                                startActivity(logIntent);
+                                closeOptionsMenu();
+                                break;
+                            case R.id.nav_rate_us:
+                                Intent ratIntent = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                                startActivity(ratIntent);
+                                closeOptionsMenu();
+                                break;
+                            case R.id.nav_updates:
+                                Intent updIntent = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                                startActivity(updIntent);
+                                break;
+                        }
+                        return true;
+                    }
+                }
+        );
     }
 
     /**
@@ -56,61 +85,29 @@ public class Main2Activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    ////////////////////////////////////////Button Listeners
-    public void MTNClickListner(){
-        buttonM = (ImageButton) findViewById(R.id.imageButtonM);//.mtn_button);
-        buttonM.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                       // MTNClickDialog();     Select Dialog call
-                        Intent mntIntent = new Intent("com.example.xolaniman_xdelman.themc_app.Main3Activity_menu_icons");
-                        startActivity(mntIntent);
-                    }
-                }
-        );
-    }
-
-    public void VodaClickListner(){
-        buttonV = (ImageButton) findViewById(R.id.imageButtonV);//.button_voda);
-        buttonV.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //VodaClickDialog(); Select Dialog call
-                        Intent vodaIntent = new Intent("com.example.xolaniman_xdelman.themc_app.Main3Activity_menu_icons");
-                        startActivity(vodaIntent);
-                    }
-                }
-        );
-    }
-
-    public void CellcClickListner(){
-        buttonC = (ImageButton) findViewById(R.id.imageButtonC);//.cellc_button);
-        buttonC.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //CellcClickDialog(); Select Dialog call
-                        Intent cellcIntent = new Intent("com.example.xolaniman_xdelman.themc_app.Main3Activity_menu_icons");
-                        startActivity(cellcIntent);
-                    }
-                }
-        );
-    }
-
-    public void EitaClickListener(){
-        buttonT = (ImageButton) findViewById(R.id.imageButtonE);//.button_8ta);
-        buttonT.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //EitaClickDialog();  Select Dialog call
-                        Intent eitaIntent = new Intent("com.example.xolaniman_xdelman.themc_app.Main3Activity_menu_icons");
-                        startActivity(eitaIntent);
-                    }
-                }
-        );
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.imageButtonM:
+                // Navigate to MTN
+                Intent mntIntent = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                startActivity(mntIntent);
+                break;
+            case R.id.imageButtonV:
+                // Navigate to Vodacome
+                Intent vodaIntent = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                startActivity(vodaIntent);
+                break;case R.id.imageButtonC:
+                // Navigate to Cell C
+                Intent cellIntent = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                startActivity(cellIntent);
+                break;
+            case R.id.imageButtonE:
+                // Navigate to Eita
+                Intent intentRegister = new Intent(getApplicationContext(), Main3Activity_menu_icons.class);
+                startActivity(intentRegister);
+                break;
+        }
     }
 
     /*

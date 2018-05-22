@@ -25,7 +25,7 @@ public class Main3Activity_Register extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent_User_Reg = new Intent("com.example.xolaniman_xdelman.themc_app.Main3Activity_User_Reg");
+                        Intent intent_User_Reg = new Intent(getApplicationContext(), Main3Activity_User_Reg.class);
                         startActivity(intent_User_Reg);
                     }
                 }
@@ -38,7 +38,7 @@ public class Main3Activity_Register extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent_Spaza_Reg = new Intent("com.example.xolaniman_xdelman.themc_app.Main3ActivitySpazaReg");
+                        Intent intent_Spaza_Reg = new Intent(getApplicationContext(), Main3ActivitySpazaReg.class);
                         startActivity(intent_Spaza_Reg);
                     }
                 }

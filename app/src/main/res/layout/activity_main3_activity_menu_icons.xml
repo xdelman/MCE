@@ -2,7 +2,7 @@
 
 <android.support.v4.widget.DrawerLayout xmlns:andriod="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    andriod:id="@+id/drawer_layout"
+    andriod:id="@+id/menu_drawer_layout"
     andriod:layout_width="match_parent"
     andriod:layout_height="match_parent">
 

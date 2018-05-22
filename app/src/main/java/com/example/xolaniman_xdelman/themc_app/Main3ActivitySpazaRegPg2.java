@@ -8,6 +8,6 @@ public class Main3ActivitySpazaRegPg2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3_spaza_reg_pg2);
+        setContentView(R.layout.activity_main3_activity_spaza_reg_pg2);
     }
 }

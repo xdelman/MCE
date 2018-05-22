@@ -2,6 +2,8 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorBackground_XXXXX">#413e4f</color>
+    <color name="colorBackground">#e1e2e6</color>
     <color name="colorAccent">#FF4081</color>
     <color name="Black">#030303</color>
     <color name="ButtonBackground">#595555</color>
@@ -13,5 +15,4 @@
     <!--Added-->
     <color name="colorTextHint">#51d8c7</color>
     <color name="colorText">#FFFFFF</color>
-
 </resources>

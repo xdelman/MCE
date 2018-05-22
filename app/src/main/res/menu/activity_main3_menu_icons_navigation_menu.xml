@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group  android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_settings"
+            android:title="Settings"
+            android:checkable="true"
+            android:icon="@drawable/mce_side_settings"/>
 
-</menu>
+        <item
+            android:id="@+id/nav_updates"
+            android:title="Check for New Updates"
+            android:checkable="true"
+            android:icon="@drawable/mce_side_updates"/>
+
+        <item
+            android:id="@+id/nav_rate_us"
+            android:title="Rate Us"
+            android:checkable="true"
+            android:icon="@drawable/mce_side_rate_us"/>
+
+        <item
+            android:id="@+id/nav_help"
+            android:title="Help and Feedback"
+            android:checkable="true"
+            android:icon="@drawable/mce_side_help_and_feedback"/>
+
+        <item
+            android:id="@+id/nav_about_us"
+            android:title="About Us"
+            android:checkable="true"
+            android:icon="@drawable/mce_side_about_us"/>
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout"
+            android:checkable="true"
+            android:icon="@drawable/mce_side_logout"/>
+    </group>
+
+    </menu>
